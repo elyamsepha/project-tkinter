@@ -10,9 +10,9 @@ class App:
 		self.tela_inicial = Tk()
 		self.tela_inicial.title("TELA INICIAL")
 		self.tela_inicial.geometry("350x300")
-		texto1 = Label(self.tela_inicial, text="Esta é uma aplicação para fins de aprendizado\nEspero que goste!").place(x=25, y=0)
-		login = Button(self.tela_inicial, height=3, width=30, text="LOGIN", command=self.func_login).place(x=60, y=100)
-		registrar = Button(self.tela_inicial, height=3, width=30, text="REGISTRAR", command=self.func_registro).place(x=60, y=200)
+		Label(self.tela_inicial, text="Esta é uma aplicação para fins de aprendizado\nEspero que goste!").place(x=25, y=0)
+		Button(self.tela_inicial, height=3, width=30, text="LOGIN", command=self.func_login).place(x=60, y=100)
+		Button(self.tela_inicial, height=3, width=30, text="REGISTRAR", command=self.func_registro).place(x=60, y=200)
 		self.tela_inicial.mainloop()
 
 	def func_registro(self):
@@ -25,15 +25,15 @@ class App:
 		self.senha = StringVar()
 		self.usuario = StringVar()
 
-		text = Label(self.registro, text="            INSIRA AS INFORMAÇÕES DE SEU CADASTRO\n").place(x=20, y=0)
-		usuarioText = Label(self.registro,font=30, text="Usuario:").place(x=20, y=70)
-		usuario_input = Entry(self.registro, width=30, textvariable=self.usuario).place(x=85, y=73)
+		Label(self.registro, text="            INSIRA AS INFORMAÇÕES DE SEU CADASTRO\n").place(x=20, y=0)
+		Label(self.registro,font=30, text="Usuario:").place(x=20, y=70)
+		Entry(self.registro, width=30, textvariable=self.usuario).place(x=85, y=73)
 
-		senhaText = Label(self.registro,font=30, text="Senha:").place(x=20, y=97)
-		usuario_input = Entry(self.registro, width=30, textvariable=self.senha, show="*").place(x=85, y=100)
-		registrar = Button(self.registro, height=3, width=20, text="COMPLETAR REGISTRO", command=self.completar_registro).place(x=90, y=200)
+		Label(self.registro,font=30, text="Senha:").place(x=20, y=97)
+		Entry(self.registro, width=30, textvariable=self.senha, show="*").place(x=85, y=100)
+		Button(self.registro, height=3, width=20, text="COMPLETAR REGISTRO", command=self.completar_registro).place(x=90, y=200)
 
-		voltar = Button(self.registro, height=1, width=5, text="VOLTAR", command=lambda: self.fechar_janela(self.registro)).place(x=0, y=285)
+		Button(self.registro, height=1, width=5, text="VOLTAR", command=lambda: self.fechar_janela(self.registro)).place(x=0, y=285)
 
 		self.registro.mainloop()
 
@@ -47,15 +47,15 @@ class App:
 		self.senha = StringVar()
 		self.usuario = StringVar()
 
-		text = Label(self.login, text="            INSIRA AS INFORMAÇÕES DE LOGIN\n").place(x=20, y=0)
-		usuarioText = Label(self.login,font=30, text="Usuario:").place(x=20, y=70)
-		usuario_input = Entry(self.login, width=30, textvariable=self.usuario).place(x=85, y=73)
+		Label(self.login, text="            INSIRA AS INFORMAÇÕES DE LOGIN\n").place(x=20, y=0)
+		Label(self.login,font=30, text="Usuario:").place(x=20, y=70)
+		Entry(self.login, width=30, textvariable=self.usuario).place(x=85, y=73)
 
-		senhaText = Label(self.login,font=30, text="Senha:").place(x=20, y=97)
-		usuario_input = Entry(self.login, width=30, textvariable=self.senha, show="*").place(x=85, y=100)
-		logar = Button(self.login, height=3, width=20, text="LOGAR", command=self.completar_login).place(x=90, y=200)
+		Label(self.login,font=30, text="Senha:").place(x=20, y=97)
+		Entry(self.login, width=30, textvariable=self.senha, show="*").place(x=85, y=100)
+		Button(self.login, height=3, width=20, text="LOGAR", command=self.completar_login).place(x=90, y=200)
 
-		voltar = Button(self.login, height=1, width=5, text="VOLTAR", command=lambda: self.fechar_janela(self.login)).place(x=0, y=285)
+		Button(self.login, height=1, width=5, text="VOLTAR", command=lambda: self.fechar_janela(self.login)).place(x=0, y=285)
 
 		self.login.mainloop()
 
