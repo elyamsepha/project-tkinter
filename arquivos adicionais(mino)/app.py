@@ -10,6 +10,7 @@ class App:
 		self.tela_inicial = Tk()
 		self.tela_inicial.title("TELA INICIAL")
 		self.tela_inicial.geometry("350x300")
+		self.tela_inicial.resizable(False,False)
 		Label(self.tela_inicial, text="Esta é uma aplicação para fins de aprendizado\nEspero que goste!").place(x=25, y=0)
 		Button(self.tela_inicial, height=3, width=30, text="LOGIN", command=self.func_login).place(x=60, y=100)
 		Button(self.tela_inicial, height=3, width=30, text="REGISTRAR", command=self.func_registro).place(x=60, y=200)
@@ -21,6 +22,7 @@ class App:
 		self.registro = Tk()
 		self.registro.title("TELA DE REGISTRO")
 		self.registro.geometry("350x310")
+		self.registro.resizable(False,False)
 
 		self.senha = StringVar()
 		self.usuario = StringVar()
@@ -43,6 +45,7 @@ class App:
 		self.login = Tk()
 		self.login.title("TELA DE LOGIN")
 		self.login.geometry("350x310")
+		self.login.resizable(False,False)
 
 		self.senha = StringVar()
 		self.usuario = StringVar()
