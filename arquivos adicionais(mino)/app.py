@@ -5,11 +5,18 @@ from banco_de_dados import banco
 
 numeros = ['0','1','2','3','4','5','6','7','8','9']
 
+def centralizar(janela, x,y):
+	altura = janela.winfo_screenwidth()
+	largura = janela.winfo_screenheight()
+	altura_tela = (altura / 2) - (x / 2)
+	largura_tela = (largura / 2) - (y / 2)
+	janela.geometry(f'{x}x{y}+{int(altura_tela)}+{int(largura_tela)}')
+
 class App:
 	def __init__(self):
 		self.tela_inicial = Tk()
 		self.tela_inicial.title("TELA INICIAL")
-		self.tela_inicial.geometry("350x300")
+		centralizar(self.tela_inicial, 350,300)
 		self.tela_inicial.resizable(False,False)
 		Label(self.tela_inicial, text="Esta é uma aplicação para fins de aprendizado\nEspero que goste!").place(x=25, y=0)
 		Button(self.tela_inicial, height=3, width=30, text="LOGIN", command=self.func_login).place(x=60, y=100)
@@ -21,7 +28,7 @@ class App:
 
 		self.registro = Tk()
 		self.registro.title("TELA DE REGISTRO")
-		self.registro.geometry("350x310")
+		centralizar(self.registro, 350, 310)
 		self.registro.resizable(False,False)
 
 		self.senha = StringVar()
@@ -44,7 +51,7 @@ class App:
 
 		self.login = Tk()
 		self.login.title("TELA DE LOGIN")
-		self.login.geometry("350x310")
+		centralizar(self.login, 350, 310)
 		self.login.resizable(False,False)
 
 		self.senha = StringVar()
@@ -94,7 +101,12 @@ class App:
 		self.__init__()
 
 	def APP(self):
-		print("não tem nada aqui(ainda)")
+		self.app = Tk()
+		self.app.title("APP")
+		centralizar(self.app, 350, 310)
+		self.app.resizable(False,False)
+
+		self.app.mainloop()
 
 if __name__ == "__main__":
 	app = App()
